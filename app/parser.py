@@ -49,11 +49,11 @@ class Parser:
             if raw_date[0] == "<":
                 pass
             else:
-                clean_data["creation_date"] = datetime.datetime.strptime(raw_date, "%d/%m/%Y").date()
+                clean_data["date_created"] = datetime.datetime.strptime(raw_date, "%d/%m/%Y").date()
 
             extracted.append(clean_data)
 
-        print(extracted)
+        return extracted
 
     def get_page_from_url(self, url):
         splitted = str(url).split("/")[5].split("-")

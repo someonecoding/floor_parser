@@ -1,8 +1,8 @@
-"""added Apartment model
+"""Created Apartment model
 
-Revision ID: f722308cfe4f
+Revision ID: d9390d0c8614
 Revises: 
-Create Date: 2022-09-08 03:07:58.908161
+Create Date: 2022-09-08 12:21:58.795723
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = "f722308cfe4f"
+revision = "d9390d0c8614"
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -25,7 +25,7 @@ def upgrade() -> None:
         sa.Column("title", sa.String(), nullable=True),
         sa.Column("date_created", sa.Date(), nullable=True),
         sa.Column("city", sa.String(), nullable=True),
-        sa.Column("beds", sa.Integer(), nullable=True),
+        sa.Column("beds", sa.String(), nullable=True),
         sa.Column("description", sa.String(), nullable=True),
         sa.Column("price", sa.Float(), nullable=True),
         sa.Column("currency", sa.String(), nullable=True),
