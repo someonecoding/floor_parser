@@ -12,6 +12,7 @@ from config import settings
 from db import Base
 
 # Add your models here for Base metadata scope
+from models import Apartment
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
