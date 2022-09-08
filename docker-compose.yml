@@ -12,7 +12,7 @@ services:
   main:
     build:
       context: .
-    command: bash -c "python main.py"
+    command: bash -c "alembic upgrade head && python main.py"
     container_name: main
     env_file:
       - db_credentials.env

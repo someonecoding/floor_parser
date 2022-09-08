@@ -3,12 +3,12 @@ from os import getenv
 
 class Settings:
     # Database credentials
-    DATABASE_NAME = getenv('POSTGRES_DB')
-    DATABASE_USER = getenv('POSTGRES_USER')
-    DATABASE_PASSWORD = getenv('POSTGRES_PASSWORD')
-    DATABASE_URL = f'postgresql+asyncpg://{DATABASE_USER}:{DATABASE_PASSWORD}@database:5432/{DATABASE_NAME}'
+    DATABASE_NAME = getenv("POSTGRES_DB")
+    DATABASE_USER = getenv("POSTGRES_USER")
+    DATABASE_PASSWORD = getenv("POSTGRES_PASSWORD")
+    DATABASE_URL = f"postgresql+asyncpg://{DATABASE_USER}:{DATABASE_PASSWORD}@database:5432/{DATABASE_NAME}"
 
-    SECRET_KEY = getenv('SECRET_KEY')
+    SECRET_KEY = getenv("SECRET_KEY")
 
 
 settings = Settings()

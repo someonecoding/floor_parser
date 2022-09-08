@@ -13,7 +13,6 @@ from db import Base
 
 # Add your models here for Base metadata scope
 
-
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
 config = context.config
