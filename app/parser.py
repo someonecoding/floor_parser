@@ -1,4 +1,5 @@
 import aiohttp
+import asyncio
 from bs4 import BeautifulSoup
 import datetime
 
@@ -8,11 +9,14 @@ class Parser:
         url = f"https://www.kijiji.ca/b-apartments-condos/city-of-toronto/page-{num}/c37l1700273"
         return url
 
-    async def parse_page(self, page):
+    async def parse_page(self, page, lst=None):
         async with aiohttp.ClientSession() as session:
             async with session.get(self.get_page_url(page)) as response:
                 html = await response.text()
-                return str(response.url), html
+                if lst is None:
+                    return str(response.url), html
+                else:
+                    lst.extend(self.extract_data(html))
 
     def extract_data(self, raw_html):
         soup = BeautifulSoup(raw_html, "html.parser")
@@ -46,10 +50,10 @@ class Parser:
                 pass
 
             raw_date = info.find("div", {"class": "location"}).find("span", {"class": "date-posted"}).text
-            if raw_date[0] == "<":
-                pass
-            else:
+            try:
                 clean_data["date_created"] = datetime.datetime.strptime(raw_date, "%d/%m/%Y").date()
+            except Exception:
+                pass
 
             extracted.append(clean_data)
 

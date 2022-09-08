@@ -9,9 +9,11 @@ parser = Parser()
 
 
 async def main():
-    res = await parser.parse_page(33)
-    raw_html = res[1]
-    clean_data = parser.extract_data(raw_html)
+    parsed = []
+    last_page = await parser.get_last_page()
+
+    await asyncio.gather(*(parser.parse_page(i, parsed) for i in range(1, last_page + 1)))
+    await asyncio.gather(*(logic.create_apartment(i) for i in parsed))
 
 
 asyncio.run(main())
