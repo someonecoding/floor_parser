@@ -5,6 +5,7 @@ async-timeout==4.0.2
 asyncpg==0.26.0
 attrs==22.1.0
 autoflake==1.5.3
+beautifulsoup4==4.11.1
 black==22.8.0
 cfgv==3.3.1
 charset-normalizer==2.1.1
@@ -30,6 +31,7 @@ psycopg2==2.9.3
 pycodestyle==2.9.1
 pyflakes==2.5.0
 PyYAML==6.0
+soupsieve==2.3.2.post1
 SQLAlchemy==1.4.41
 toml==0.10.2
 tomli==2.0.1
