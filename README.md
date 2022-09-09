@@ -4,7 +4,7 @@
 ## Installation
 You need to setup some .env files
 
-**pg.env**
+**db_credentials.env**
 ```
 POSTGRES_DB=somedb
 POSTGRES_USER=someadmin
